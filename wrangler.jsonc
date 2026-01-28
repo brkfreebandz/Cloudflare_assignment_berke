@@ -1,0 +1,26 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+        "$schema": "node_modules/wrangler/config-schema.json",
+        "name": "feedback-analyzer",
+        "main": "src/entry.py",
+        "compatibility_date": "2025-09-27",
+        "compatibility_flags": [
+                "python_workers"
+        ],
+        "observability": {
+                "enabled": true
+        },
+        "d1_databases": [
+                {
+                        "binding": "feedback_db",
+                        "database_name": "feedback-db",
+                        "database_id": "7b5d74df-39be-4dae-9e3a-64165fed1bfb"
+                }
+        ],
+        "ai": {
+                "binding": "AI"
+        }
+}
